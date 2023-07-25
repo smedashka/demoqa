@@ -1,4 +1,5 @@
 from selenium.common import NoSuchElementException
+from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
 
 
@@ -31,3 +32,18 @@ class WebElement:
 
     def visible(self):
         return self.find_element().is_displayed()
+
+    def send_keys(self, text: str):
+        self.find_element().send_keys(text)
+
+    def click_force(self):
+        self.driver.execute_script('arguments[0].click()', self.find_element())
+
+    def clear(self):
+        self.find_element().send_keys(Keys.CONTROL + 'a')
+        self.find_element().send_keys(Keys.DELETE)
+
+    def get_attribute(self):
+        return self.find_element().get_attribute('innerHTML')
+
+
