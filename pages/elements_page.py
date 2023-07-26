@@ -15,4 +15,5 @@ class ElementsPage(BasePage):
         self.btn_sidebar_first_checkbox = WebElement(driver, 'div:nth-child(1) > div> ul> #item-1 > span')
         self.btns_first_menu = WebElement(driver, 'div:nth-child(1) > div> ul > li')
         self.navbar = WebElement(driver, 'nav > button.navbar-toggler > span.navbar-toggler-icon')
+        self.sidebar = WebElement(driver, 'div.row > div:nth-child(1)')
 
