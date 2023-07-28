@@ -27,3 +27,21 @@ class WebTablesPage(BasePage):
         self.delete_icon = WebElement(driver, '#delete-record-4')
         self.no_data_element = WebElement(driver, 'div.rt-noData')
         self.icons_delete = WebElement(driver, 'div.action-buttons > span:nth-child(2)')
+        self.select_rows = WebElement(driver, 'span.select-wrap.-pageSizeOptions > select')
+        self.btn_prev = WebElement(driver, 'div.-previous > button.-btn')
+        self.btn_next = WebElement(driver, 'div.-next > button.-btn')
+        self.max_page_num = WebElement(driver, 'span.-pageInfo > span')
+        self.current_page_num = WebElement(driver, 'div > input[type=number]')
+
+    def fill_form(self, first_name, last_name, user_email, user_age, salary, department):
+        self.first_name.send_keys(first_name)
+        self.last_name.send_keys(last_name)
+        self.user_email.send_keys(user_email)
+        self.user_age.send_keys(user_age)
+        self.salary.send_keys(salary)
+        self.department.send_keys(department)
+
+    def add_table_row(self, first_name, last_name, user_email, user_age, salary, department):
+        self.btn_add.click()
+        self.fill_form(first_name, last_name, user_email, user_age, salary, department)
+        self.btn_submit.click()
