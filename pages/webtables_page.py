@@ -25,3 +25,5 @@ class WebTablesPage(BasePage):
         self.table_row_department = WebElement(driver, 'div.rt-tbody > div:nth-child(4) > div > div:nth-child(6)')
         self.edit_icon = WebElement(driver, '#edit-record-4')
         self.delete_icon = WebElement(driver, '#delete-record-4')
+        self.no_data_element = WebElement(driver, 'div.rt-noData')
+        self.icons_delete = WebElement(driver, 'div.action-buttons > span:nth-child(2)')
